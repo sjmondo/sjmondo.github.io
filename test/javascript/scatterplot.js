@@ -26,8 +26,8 @@ function loadData() {
 	    proteinIds : d.proteinIds,
 	    strands : d.protein_strand
 	};
-    })
-    return details
+    });
+    return details;
 };
 
 function showData(data) {
@@ -53,11 +53,11 @@ function showData(data) {
     // Color scale: give me a specie name, I return a color
     var color_promoters = d3.scaleOrdinal()
         .domain(["yes", "no"])
-        .range(["#008000", "#c7c4b8"])
-    let scaff_u = [...new Set(data.map(d => d.scaffold))]
+        .range(["#008000", "#c7c4b8"]);
+    let scaff_u = [...new Set(data.map(d => d.scaffold))];
     var color_scaffs = d3.scaleOrdinal()
         .domain(scaff_u)
-        .range(d3.schemeSet2)
+        .range(d3.schemeSet2);
 
     // Define the div for the tooltip
     var div = d3.select("body").append("div")
@@ -93,19 +93,19 @@ function showData(data) {
     d3.select("#color_by_scaffs").on("click", function() {
 	svg.selectAll("circle")
 	    .data(data)
-	    .style("fill", d => color_scaffs(d.scaffolds))
-	add_legend(svg_legend, scaff_u, color_scaffs)
+	    .style("fill", d => color_scaffs(d.scaffolds));
+	add_legend(svg_legend, scaff_u, color_scaffs);
     });
     d3.select("#color_promoter_MACs").on("click", function() {
 	svg.selectAll("circle")
 	    .data(data)
-	    .style("fill", d => color_promoters(d.present_at_promoters))
-	add_legend(svg_legend, ["yes", "no"], color_promoters)
+	    .style("fill", d => color_promoters(d.present_at_promoters));
+	add_legend(svg_legend, ["yes", "no"], color_promoters);
     });
 
     // Add Legend
     let svg_legend = create_svg_legend();
-    add_legend(svg_legend, ["yes", "no"], color_promoters)
+    add_legend(svg_legend, ["yes", "no"], color_promoters);
 }
 
 function create_svg_legend() {
@@ -120,7 +120,7 @@ function create_svg_legend() {
         .append("g")
         .attr("transform",
 	      "translate(" + margin.left + "," + margin.top + ")");
-    return svg_legend
+    return svg_legend;
 }
 
 function add_legend(svg_legend, legends, color) {
@@ -129,13 +129,13 @@ function add_legend(svg_legend, legends, color) {
 
     // Add dots
     let circle = svg_legend.selectAll("circle")
-	.data(legends)
+	.data(legends);
     circle.enter()
 	.append("circle")
         .attr("cx", 50)
         .attr("cy", (d, i) => 100 + i * 25)
         .attr("r", 7)
-        .style("fill", d => color(d))
+        .style("fill", d => color(d));
 
     // Add one dot in the legend for each name.
     // 100 is where the first dot appears. 25 is the distance between dots
@@ -148,7 +148,7 @@ function add_legend(svg_legend, legends, color) {
         .style("fill", d => color(d))
         .text(d => d)
         .attr("text-anchor", "left")
-        .style("alignment-baseline", "middle")
+        .style("alignment-baseline", "middle");
 };
 
-loadData().then(showData)
+loadData().then(showData);
