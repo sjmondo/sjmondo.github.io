@@ -4,7 +4,7 @@ let width = 600 - margin.left - margin.right;
 let height = 600 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
-var svg = d3.select("#plot")
+var svg = d3.select("#macplot")
     .append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
@@ -22,8 +22,8 @@ function loadData() {
 	    scaffold : d.scf,
 	    start : d.start,
 	    end : d.end,
-	    present_at_promoters : d.present_at_promoter
-	    proteinIds : d.proteinIds
+	    present_at_promoters : d.present_at_promoter,
+	    proteinIds : d.proteinIds,
 	    strands : d.protein_strand
 	};
     })
@@ -34,7 +34,7 @@ function showData(data) {
     // Calculate min, max
     let x_min_max = d3.extent(data, d => d.x_axis);
     let y_min_max = d3.extent(data, d => d.y_axis);
-
+    
     // Add X axis
     var x = d3.scaleLinear()
         .domain(x_min_max)
@@ -79,7 +79,7 @@ function showData(data) {
 	    div.transition()
 	        .duration(200)
 	        .style("opacity", .9);
-	    div.html("<b>" + d.scaffold + ":" + d.start + "-" + d.end + "</b><br/>ProteinId(s): " + d.proteinIds + " strand(s): " + d.strands)
+	    div.html("<b>" + d.MC_id + ", location: "  + d.scaffold + ":" + d.start + "-" + d.end + "</b><br/>ProteinId(s): " + d.proteinIds + " strand(s): " + d.strands)
 	        .style("left", (event.pageX) + "px")
 	        .style("top", (event.pageY - 28) + "px");
 	})
