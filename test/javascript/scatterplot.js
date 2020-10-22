@@ -77,14 +77,13 @@ function showData(data) {
         .style("opacity", 0.8)
 	.on("click", function(d) {
             var url = "https://mycocosm.jgi.doe.gov/cgi-bin/colorSeqViewer?db=Piromy1&table=m6A_clusters_GNUUS&fid=";
-	    var urlidentifier = d.MC_id;
-            url += urlidentifier;
+            url += d.MC_id;
 	})
         .on("mouseover", function(event, d) {
 	    div.transition()
 	        .duration(200)
 	        .style("opacity", .9);
-	    div.html("<b>" + d.MC_id + ", location: "  + d.scaffold + ":" + d.start + "-" + d.end + "</b><br/>ProteinId(s): " + d.proteinIds + " strand(s): " + d.strands)
+	    div.html("<b>MC" + d.MC_id + ", location: "  + d.scaffold + ":" + d.start + "-" + d.end + "</b><br/>ProteinId(s): " + d.proteinIds + " strand(s): " + d.strands)
 	        .style("left", (event.pageX) + "px")
 	        .style("top", (event.pageY - 28) + "px");
 	})
