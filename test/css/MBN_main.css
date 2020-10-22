@@ -1,0 +1,25 @@
+div.tooltip {	
+	  position: absolute;			
+	    text-align: center;			
+	      /*width: 120px;*/
+	      /*height: 28px;*/
+	      padding: 2px 8px;				
+	        font: 12px sans-serif;		
+		  background: lightsteelblue;	
+		    border: 0px;		
+		      border-radius: 8px;			
+		        pointer-events: none;			
+		}
+
+		div#container {
+			  display: flex;
+			    justify-content: flex-start;
+		    }
+
+		    div#pca {
+			      flex-basis: 30%
+		      }
+
+		      div#legend {
+			        flex-basis: 30%
+			}
