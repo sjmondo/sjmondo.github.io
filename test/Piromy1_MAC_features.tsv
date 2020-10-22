@@ -1,4 +1,4 @@
-MC_ID	scf	start	end	length	num_mods	present_at_promoter	proteinId(s)	protein_strand
+MC_ID	scf	start	end	length	num_mods	present_at_promoter	proteinIds	protein_strand
 MC1	scaffold_12	3401	3420	19	6	no	NA	NA
 MC2	scaffold_12	10758	11209	451	37	yes	314191	+
 MC3	scaffold_12	36747	37781	1034	45	yes	292443	+
