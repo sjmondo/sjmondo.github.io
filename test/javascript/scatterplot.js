@@ -77,7 +77,7 @@ function showData(data) {
         .style("opacity", 0.8)
 	.on("click", function(d) {
             var url = "https://mycocosm.jgi.doe.gov/cgi-bin/colorSeqViewer?db=Piromy1&table=m6A_clusters_GNUUS&fid=";
-	    var urlidentifier = d.MC_id.slice(2)
+	    var urlidentifier = d.MC_id;
             url += urlidentifier;
 	})
         .on("mouseover", function(event, d) {
