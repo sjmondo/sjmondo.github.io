@@ -15,6 +15,7 @@ var svg = d3.select("#macplot")
 //Read the data
 function loadData() {
     let details = d3.tsv("Piromy1_MAC_features.tsv", function(d) {
+	console.log(d[0]);
 	return {
 	    MC_id : d.MC_ID,
 	    x_axis : +d.length,
