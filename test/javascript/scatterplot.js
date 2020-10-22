@@ -151,4 +151,4 @@ function add_legend(svg_legend, legends, color) {
         .style("alignment-baseline", "middle");
 };
 
-loadData().then(showData);
+//loadData().then(showData);
