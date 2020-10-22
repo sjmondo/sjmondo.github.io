@@ -57,7 +57,7 @@ function showData(data) {
     let scaff_u = [...new Set(data.map(d => d.scaffold))];
     var color_scaffs = d3.scaleOrdinal()
         .domain(scaff_u)
-        .range(d3.schemeSet2);
+        .range(d3.schemeRdYlGn);
 
     // Define the div for the tooltip
     var div = d3.select("body").append("div")
