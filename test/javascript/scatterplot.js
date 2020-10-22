@@ -69,16 +69,13 @@ function showData(data) {
         .selectAll("circle")
         .data(data)
         .enter()
+	.attr("xlink:href", "https://mycocosm.jgi.doe.gov/cgi-bin/colorSeqViewer?db=Piromy1&table=m6A_clusters_GNUUS&fid=" + d.MC_id)
         .append("circle")
         .attr("cx", d => x(d.x_axis))
         .attr("cy", d => y(d.y_axis))
         .attr("r", 3)
         .style("fill", "#c7c4b8")
         .style("opacity", 0.8)
-	.on("click", function(d) {
-            var url = "https://mycocosm.jgi.doe.gov/cgi-bin/colorSeqViewer?db=Piromy1&table=m6A_clusters_GNUUS&fid=";
-            url += d.MC_id;
-	})
         .on("mouseover", function(event, d) {
 	    div.transition()
 	        .duration(200)
