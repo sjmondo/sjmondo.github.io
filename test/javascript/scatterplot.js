@@ -70,6 +70,7 @@ function showData(data) {
         .data(data)
         .enter()
         .append("circle")
+	.attr("xlink:href", function(d) {return "https://mycocosm.jgi.doe.gov/cgi-bin/colorSeqViewer?db=Piromy1&table=m6A_clusters_GNUUS&fid=" + d.MC_id.slice(2)})
         .attr("cx", d => x(d.x_axis))
         .attr("cy", d => y(d.y_axis))
         .attr("r", 3)
