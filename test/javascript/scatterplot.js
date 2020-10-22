@@ -75,10 +75,10 @@ function showData(data) {
         .attr("r", 3)
         .style("fill", "#c7c4b8")
         .style("opacity", 0.8)
-	.on("click", function(d){
+	.on("click", function(d) {
             var url = "https://mycocosm.jgi.doe.gov/cgi-bin/colorSeqViewer?db=Piromy1&table=m6A_clusters_GNUUS&fid=";
             url += d.MC_id.slice(2);
-	});
+	})
         .on("mouseover", function(event, d) {
 	    div.transition()
 	        .duration(200)
