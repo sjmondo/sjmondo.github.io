@@ -69,7 +69,6 @@ function showData(data) {
         .selectAll("circle")
         .data(data)
         .enter()
-	.attr("xlink:href", "https://mycocosm.jgi.doe.gov/cgi-bin/colorSeqViewer?db=Piromy1&table=m6A_clusters_GNUUS&fid=" + d.MC_id)
         .append("circle")
         .attr("cx", d => x(d.x_axis))
         .attr("cy", d => y(d.y_axis))
