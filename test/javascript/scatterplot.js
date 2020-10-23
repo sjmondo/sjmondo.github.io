@@ -52,7 +52,7 @@ function showData(data) {
 
     // Color scale: give me a specie name, I return a color
     var color_promoters = d3.scaleOrdinal()
-        .domain(["present at a promoter", "not present at a promoter"])
+        .domain(["yes", "no"])
         .range(["#008000", "#c7c4b8"]);
     let scaff_u = [...new Set(data.map(d => d.scaffold))];
     var color_scaffs = d3.scaleOrdinal()
@@ -105,7 +105,7 @@ function showData(data) {
 
     // Add Legend
     let svg_legend = create_svg_legend();
-    add_legend(svg_legend, ["yes", "no"], color_promoters);
+    add_legend(svg_legend, ["present at a promoter", "not present at a promoter"], color_promoters);
 }
 
 function create_svg_legend() {
