@@ -100,12 +100,11 @@ function showData(data) {
 	svg.selectAll("circle")
 	    .data(data)
 	    .style("fill", d => color_promoters(d.present_at_promoters));
-	add_legend(svg_legend, ["yes", "no"], color_promoters);
+	add_legend(svg_legend, ["present at a promoter", "not present at a promoter"], color_promoters);
     });
 
     // Add Legend
     let svg_legend = create_svg_legend();
-    add_legend(svg_legend, ["present at a promoter", "not present at a promoter"], color_promoters);
 }
 
 function create_svg_legend() {
