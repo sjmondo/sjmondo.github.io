@@ -52,7 +52,7 @@ function showData(data) {
 
     // Color scale: give me a specie name, I return a color
     var color_promoters = d3.scaleOrdinal()
-        .domain(["yes", "no"])
+        .domain(["present at a promoter", "not present at a promoter"])
         .range(["#008000", "#c7c4b8"]);
     let scaff_u = [...new Set(data.map(d => d.scaffold))];
     var color_scaffs = d3.scaleOrdinal()
